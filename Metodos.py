@@ -58,3 +58,8 @@ def pesquisarManifestacaoPorCodigo(conexao):
         for ocorrencia in ocorrencias:
             print('codigo', str(ocorrencia[0]), '-', ocorrencia[1], '-', ocorrencia[2], '-', ocorrencia[3], '-',
                   ocorrencia[4])
+            
+def alterarManifestacao(conexao,novoTitulo,novaDescricao,codigo):
+    sqlAtualizar = 'update ocorrencias set titulo = %s, descricao = %s where codigo = %s'
+    valores = [novoTitulo, novaDescricao, codigo]
+    atualizarBancoDados(conexao, sqlAtualizar, valores)
