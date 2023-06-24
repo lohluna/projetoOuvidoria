@@ -63,3 +63,8 @@ def alterarManifestacao(conexao,novoTitulo,novaDescricao,codigo):
     sqlAtualizar = 'update ocorrencias set titulo = %s, descricao = %s where codigo = %s'
     valores = [novoTitulo, novaDescricao, codigo]
     atualizarBancoDados(conexao, sqlAtualizar, valores)
+
+def excluirManifestacao(codigo,conexao):
+    consultaListagem = 'delete from ocorrencias where codigo = %s '
+    dados = [codigo]
+    excluirBancoDados(conexao, consultaListagem, dados)
