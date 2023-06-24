@@ -35,3 +35,26 @@ def quantidadePorTipoManifestacoes (conexao):
     resultado = listarBancoDados(conexao, consultareclamacoes)
     quantidadeReclamacoes = resultado[0][0]
     print('Quantidade de reclamações:', str(quantidadeReclamacoes))
+
+    consultarSugestoes = "select count(*) from ocorrencias where tipo = 'sugestão'"
+    resultado = listarBancoDados(conexao, consultarSugestoes)
+    quantidadeSugestoes = resultado[0][0]
+    print('Quantidade de sugestões:', str(quantidadeSugestoes))
+
+    consultarElogios = "select count(*) from ocorrencias where tipo = 'elogio'"
+    resultado = listarBancoDados(conexao, consultarElogios)
+    quantidadeElogios = resultado[0][0]
+    print('Quantidade de elogios:', str(quantidadeElogios))
+
+def pesquisarManifestacaoPorCodigo(conexao):
+    codigo = input('Digite o código da manifestação: ')
+    consultaListagem = "select * from ocorrencias where codigo = '" + codigo + "'"
+    ocorrencias = listarBancoDados(conexao, consultaListagem)
+    if len(ocorrencias) == 0:
+        print('Nenhuma manifestação cadastrada no sistema')
+    else:
+        ocorrencias = listarBancoDados(conexao, consultaListagem)
+        print(len(ocorrencias))
+        for ocorrencia in ocorrencias:
+            print('codigo', str(ocorrencia[0]), '-', ocorrencia[1], '-', ocorrencia[2], '-', ocorrencia[3], '-',
+                  ocorrencia[4])

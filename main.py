@@ -27,3 +27,22 @@ while opcao != 8:
         print()
         tipo = input('Digite o tipo da manifestação: reclamação, elogio ou sugestão: ')
         listagemManifestacoesTipo(ocorrencias,conexao,tipo)
+
+    elif opcao == 3:
+        print()
+        titulo = input('Digite a titulo da manifestação: ')
+        descricao = input('Digite a descricao da manifestação: ')
+        tipo = input('Digite o tipo da manifestação (reclamação, elogio ou sugestão): ')
+        autor = input('Digite o autor da manifestação: ')
+        criarManifestacao(conexao, titulo, descricao, tipo, autor)
+        print('Manifestação cadastrada com sucesso. ')
+
+    elif opcao == 4:
+        print()
+        quantidadePorTipoManifestacoes(conexao)
+
+    elif opcao == 5:
+        print()
+        pesquisarManifestacaoPorCodigo(conexao)
+
+
