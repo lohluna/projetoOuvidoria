@@ -45,4 +45,12 @@ while opcao != 8:
         print()
         pesquisarManifestacaoPorCodigo(conexao)
 
+    elif opcao == 6:
+        print()
+        codigo = input('Digite o código da manifestação: ')
+        novoTitulo = input('Digite o titulo da nova manifestação: ')
+        novaDescricao = input('Digite a nova descrição da manifestação: ')
+        alterarManifestacao(conexao,novoTitulo,novaDescricao,codigo)
+        print('Alteração feita com sucesso')
+
 
