@@ -52,10 +52,16 @@ while opcao != 8:
         novaDescricao = input('Digite a nova descrição da manifestação: ')
         alterarManifestacao(conexao,novoTitulo,novaDescricao,codigo)
         print('Alteração feita com sucesso')
+        
     elif opcao == 7:
         print()
         codigo = input('Digite o codigo da manifestação: ')
         excluirManifestacao(codigo,conexao)
         print ('Manifestação excluida com sucesso!')
 
+    elif opcao != 8:
+        print()
+        print('Opção inválida')
 
+encerrarBancoDados(conexao)
+print('Obrigado por usar o sistema!')
