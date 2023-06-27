@@ -1,4 +1,11 @@
-
+''' 
+Lorena Maria
+Roberto Braga
+Lucas Fernando 
+Pablo Selares
+Rogerio Soares
+Maria Fernanda
+'''
 from operacoesbd import *
 from Metodos import *
 
